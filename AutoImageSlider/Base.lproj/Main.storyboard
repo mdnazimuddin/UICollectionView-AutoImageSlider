@@ -17,12 +17,69 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FiS-4O-Knj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="XNh-h9-Nih"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ix6-Hh-mCH">
+                                    <size key="itemSize" width="372" height="230"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="FuV-6H-kio">
+                                        <rect key="frame" x="0.0" y="10" width="372" height="230"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="372" height="230"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VXQ-XU-XNA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="372" height="230"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="VXQ-XU-XNA" secondAttribute="trailing" id="769-ZU-ckZ"/>
+                                            <constraint firstItem="VXQ-XU-XNA" firstAttribute="leading" secondItem="FuV-6H-kio" secondAttribute="leading" id="W77-uF-P2i"/>
+                                            <constraint firstItem="VXQ-XU-XNA" firstAttribute="top" secondItem="FuV-6H-kio" secondAttribute="top" id="jRw-tv-C7e"/>
+                                            <constraint firstAttribute="bottom" secondItem="VXQ-XU-XNA" secondAttribute="bottom" id="u6B-Lr-f3f"/>
+                                        </constraints>
+                                        <size key="customSize" width="372" height="230"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pMh-zy-Mgj"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xzv-t5-q2t"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-2Z-iEq">
+                                <rect key="frame" x="20" y="208" width="335" height="37"/>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FiS-4O-Knj" secondAttribute="trailing" id="1Rb-Mk-Rwa"/>
+                            <constraint firstItem="QaG-2Z-iEq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AYb-1G-Qmj"/>
+                            <constraint firstItem="FiS-4O-Knj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BEJ-qL-ElT"/>
+                            <constraint firstItem="QaG-2Z-iEq" firstAttribute="bottom" secondItem="FiS-4O-Knj" secondAttribute="bottom" constant="-5" id="UcB-sI-tgt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QaG-2Z-iEq" secondAttribute="trailing" constant="20" id="fdV-C3-xsI"/>
+                            <constraint firstItem="FiS-4O-Knj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v5w-O2-4Xb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pageView" destination="QaG-2Z-iEq" id="3OX-pH-IIO"/>
+                        <outlet property="slidercollectionView" destination="FiS-4O-Knj" id="uCa-uA-ITe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
